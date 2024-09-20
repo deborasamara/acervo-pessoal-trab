@@ -1,0 +1,106 @@
+body{
+  margin: 0 !important;
+  background-color: #FFFFFF;
+}
+
+.nav-bg-logado{
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    overflow: hidden;
+    background-color: #400101;
+    text-align: center; 
+}
+.li-nav-logado{
+    float: left;
+}
+.nav-bg-logado li{
+    margin-top: 0.2rem;
+}
+
+.logo{
+    margin-left: 1rem;
+}
+
+.logo-texto{
+}
+
+.logo-texto a{
+    font-size: 1rem;
+}
+
+.img-profile{
+    margin-right: 1rem;
+}
+.img-profile a{
+    padding: 0 !important;
+}
+.login-texto{
+    font-size: 1rem;
+    line-height: 0.2;
+}
+  
+.li-nav-logado a {
+    display: block;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.nav-2-opcoes-escolha{
+    display: flex !important;
+    margin: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 2 !important;
+}
+.nav-2-opcoes-escolha div{
+    display: flex !important;
+    flex: 1;
+    align-items: center;
+}
+.nav-2-opcoes-escolha a{
+    text-decoration: none;
+    padding: 1rem;
+}
+.cadastrar-livro-op{
+    background-color: #E2D8A2 ;
+}
+.registrar-livro-op{
+    background-color: #FCC1AB;
+}
+.cadastrar-contato-op{
+    background-color: #FCD793;
+}
+.registrar-devolucao-op{
+    background-color: #E5B0B0 ;
+}
+.listar-itens-op{
+    background-color: #D9D9D9;
+}
+.cadastrar-livro-op a:visited, .cadastrar-livro-op a{
+    color: #4F1C1C;
+}
+.registrar-livro-op a:visited, .registrar-livro-op a{
+    color: #4F1C1C;
+}
+.cadastrar-contato-op a:visited, .cadastrar-contato-op a{
+    color: #4F1C1C;
+}
+.registrar-devolucao-op a:visited, .registrar-devolucao-op a{
+    color: #4F1C1C;
+}
+.listar-itens-op a:visited, .listar-itens-op a{
+    color: #4F1C1C;
+}
+.form-pesquisa{
+    margin-top: 0.7rem;
+}
+.pesquisa-input{
+    border-radius: 5px;
+    margin: 0;
+}
+.pesquisa-botao{
+    border-radius: 5px;
+    margin: 0;
+}

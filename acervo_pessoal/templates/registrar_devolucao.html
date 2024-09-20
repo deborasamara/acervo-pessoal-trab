@@ -1,0 +1,45 @@
+{% extends 'base_logado.html' %}
+{% load static %}
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'css/registrar_devolucao.css'%}">
+    {% endblock %}
+    {% block conteudo %}
+    <div class="conteudo-cadastrar-devolucao">
+        <div class="conteudo-colun1">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="" class="display-block item-cadastro-espaco label-cadastro-devolucao titulo-cadastro-devolucao">Cadastre um devolucao no seu acervo!</label>
+
+                <label for="nome" class="display-block label-cadastro-devolucao">Selecione um livro para registrar devolução</label>
+                <select name="livro" id="" required class="display-block item-cadastro-espaco input-cadastro-devolucao">
+                    <option value="" {% if not request.POST.livro %}selected{% endif %}>Selecione um livro</option>
+                    {% for livro in livros_emprestados %}
+                        <option value="{{ livro.id }}">{{ livro.nome}}</option>
+                    {% endfor %}
+                </select>
+                
+                <button class="botao-cadastro-devolucao">Registrar devolucao</button>
+
+            </form>
+        </div>
+        <div class="conteudo-colun2">
+            <p class="titulo-conteudo-colun2">Lista de empréstimos ATIVOS no seu acervo:</p>
+            {% for emprestimo_ativo in emprestimos_ativos %}
+            <ul class="ul-devolucaos-cadastrados-lista-geral"> 
+                <li>
+                    <ul class="ul-devolucaos-cadastrados-lista-geral">
+                        <li>Nome: {{emprestimo_ativo.contato.nome}}</li>
+                        <li>E-mail: {{emprestimo_ativo.contato.email}}</li>
+                        <li>Livro: {{emprestimo_ativo.livro.nome}}</li>
+                        <li>Status do empréstimo: {{ emprestimo_ativo.status_devolucao}} </li>
+                        <li>Data empréstimo: {{emprestimo_ativo.data_devolucao}}</li>
+                    </ul>
+                </li>
+            </ul>
+            {%empty%}
+                <p>Nenhuma devolução cadastrada no momento</p>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
+

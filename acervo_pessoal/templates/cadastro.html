@@ -1,0 +1,29 @@
+{% extends 'base_nao_logado.html' %}
+{% load static %}
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'css/cadastro.css'%}">
+    {% endblock %}
+    {% block conteudo %}
+    <div class="formulario">
+        <form action="" method="post"  class="formulario-cadastro">
+            {% csrf_token %}
+            <label class="display-block">Cadastro</label>
+
+            <label class="display-block" for="fname">Nome</label>
+            <input class="input-cadastro display-block" type="text" id="fname" name="fname" required>
+
+            <label class="display-block" for="fusername">Username</label>
+            <input class="input-cadastro display-block" type="text" id="fusername" name="fusername" required>
+
+            <label for="lemail">Email</label>
+            <input class="input-cadastro display-block" type="email" id="email" name="email" required>
+
+            <label for="lname">Senha</label><br>
+            <input class="input-cadastro display-block" type="password" id="password" name="password" required>
+
+            <button type="submit" class="cadastro-enviar">Enviar</button>
+
+            <p class="link-login display-block"><a href="{% url 'acervo_pessoal:login'%}">Já tem conta?<span class="amarelo-marcador"> fazer login</span></a></p>
+        </form>
+    </div>
+{% endblock %}

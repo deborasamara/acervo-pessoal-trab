@@ -1,0 +1,54 @@
+{% extends 'base_logado.html' %}
+{% load static %}
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'css/registrar_emprestimo.css'%}">
+    {% endblock %}
+    {% block conteudo %}
+    <div class="conteudo-cadastrar-emprestimo">
+        <div class="conteudo-colun1">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="" class="display-block item-cadastro-espaco label-cadastro-emprestimo titulo-cadastro-emprestimo">Cadastre um emprestimo no seu acervo!</label>
+
+                <label for="nome" class="display-block label-cadastro-emprestimo">Selecione um livro</label>
+                <select name="livro" id="" required class="display-block item-cadastro-espaco input-cadastro-emprestimo">
+                    <option value="" {% if not request.POST.livro %}selected{% endif %}>Selecione um livro</option>
+                    {% for livro in livros %}
+                        <option value="{{ livro.id }}">{{ livro.nome}}</option>
+                    {% endfor %}
+                </select>
+                
+                <label for="email" class="display-block label-cadastro-emprestimo">Selecione o contato</label>
+                <select name="contato" id="" required class="display-block item-cadastro-espaco input-cadastro-emprestimo">
+                    {% for contato in contatos %}
+                    <option value="" {% if not request.POST.contato %}selected{% endif %}>Selecione um contato</option>
+                        <option value="{{ contato.id }}">{{ contato.nome }} - ({{ contato.email }})</option>
+                    {% endfor %}
+                </select>
+                
+                <button class="botao-cadastro-emprestimo">Emprestar</button>
+
+            </form>
+        </div>
+        <div class="conteudo-colun2">
+            <p class="titulo-conteudo-colun2">Lista de emprestimos cadastrados no seu acervo:</p>
+            {% for emprestimo in emprestimos %}
+            <ul class="ul-emprestimos-cadastrados-lista-geral"> 
+                <li>
+                    <ul class="ul-emprestimos-cadastrados-lista-geral">
+                        <li>Nome: {{emprestimo.contato.nome}}</li>
+                        <li>E-mail: {{emprestimo.contato.email}}</li>
+                        <li>Livro: {{emprestimo.livro.nome}}</li>
+                        <li>Data devolução: {{emprestimo.data_devolucao}}</li>
+                        <li>Status do empréstimo: {{ emprestimo.status_emprestimo}} </li>
+                        <li>Data empréstimo: {{emprestimo.data_emprestimo}}</li>
+                    </ul>
+                </li>
+            </ul>
+            {%empty%}
+                <p>Nenhum emprestimo cadastrado no momento</p>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
+

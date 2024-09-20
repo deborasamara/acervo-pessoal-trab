@@ -1,0 +1,18 @@
+{% extends 'base_nao_logado.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css'%}">
+{% endblock %}
+{% block conteudo %}
+<div class="conteudo-home">
+    <div class="conteudo-home-coluna1">
+        <div class="texto-coluna1">
+            <h1><span class="amarelo-marcador">Organize</span> seus <span class="amarelo-marcador">livros</span> emprestados com <span class="amarelo-marcador">facilidade</span></h1>
+            <button class="botao-cadastro" onclick="window.location.href='{% url 'acervo_pessoal:cadastro' %}'">Cadastre-se aqui!!</button>
+        </div>
+    </div>
+    <div class="conteudo-home-coluna1">
+        <img src="{% static 'images/img-home.svg'%}" alt="">
+    </div>
+</div>
+{% endblock %}

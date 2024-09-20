@@ -1,0 +1,18 @@
+{% extends 'base_logado.html' %}
+{% load static %}
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'css/pag_inicial_logado.css'%}">
+    {% endblock %}
+    {% block conteudo %}
+    <div class="conteudo-pag-inicial-logado">
+        <div class="conteudo-colun1">
+            <h1>Bem vindo(a), {{ user.first_name }}! O que você quer fazer hoje? Escolha uma opção!</h1>
+
+        </div>
+        <div class="conteudo-colun2">
+            <img src="{% static 'images/img-homepage.svg'%}" alt="">
+        </div>
+    </div>
+
+    {% endblock %}
+

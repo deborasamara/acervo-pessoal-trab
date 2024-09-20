@@ -1,0 +1,42 @@
+body{
+    background-color: #FFFFFF;
+}
+.formulario{
+    margin: auto;
+    width: 50%;
+    margin-top: 4rem;
+}
+.formulario-login{
+    border: 2px solid #DDB364;
+    border-radius: 12px;
+    margin: auto;
+    width: 25rem;
+    padding: 2rem;
+}
+.display-block{
+    display: block;
+}
+.amarelo-marcador{
+    color:#F2B035;
+}
+.login-enviar{
+    background-color: #DDB364;
+    border: #DDB364;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+}
+.link-login a{
+    text-decoration: none;
+    color: black;
+}
+.link-login a:visited{
+    color: black;
+}
+
+.input-login{
+    background-color: #F2E3C7;
+    border-radius: 5px;
+    padding: 0.4rem 2rem;
+    border: 1px solid #F2E3C7;
+    margin-bottom: 0.5rem;
+}

@@ -1,0 +1,32 @@
+.conteudo-home{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center; 
+    height: 80vh;
+}
+.conteudo-home-coluna1{
+    display: flex;
+    flex: 1;
+    min-width: 300px;
+    text-align: left; 
+    margin-left: 4rem;
+}
+.conteudo-home-coluna2{
+    display: flex;
+    flex: 1;
+    min-width: 300px;
+    margin-right: 1rem;
+}
+img{
+    max-width: 100%;
+}
+.amarelo-marcador{
+    color:#F2B035;
+}
+.botao-cadastro{
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    border: 1px solid #F0BB58;
+    background-color: #F0BB58;
+}

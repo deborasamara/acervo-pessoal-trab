@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/base_nao_logado.css'%}">
+    <title>{% block titulo %}Homepage{% endblock %}</title>
+</head>
+<body>
+    {% block navbar %}
+    <nav>
+        <ul>
+            <li  class="logo"><img src="{% static 'images/logo.svg' %}"></li>
+            <li  class="logo-texto"><a href="{% url 'acervo_pessoal:home'%}">Acervo Pessoal Samara</a></li>
+            <li  class="img-profile" style="float:right">
+                <a  href="{% url 'acervo_pessoal:login'%}">
+                    <img src="{% static 'images/profile.svg' %}">
+                    <div class="login-texto">Login</div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    {% endblock %}
+    {% block conteudo %}
+    {% endblock %}
+</body>
+</html>

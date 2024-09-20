@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/base_logado.css'%}">
+    <title>{% block titulo %}Homepage{% endblock %}</title>
+</head>
+<body>
+    {% block navbar %}
+    <nav>
+        <ul class="nav-bg-logado">
+            <li  class="logo li-nav-logado"><img src="{% static 'images/logo.svg' %}"></li>
+            <li  class="logo-texto li-nav-logado"><a href="#home">Acervo Pessoal Samara</a></li>
+            <li class="barra-pesquisa li-nav-logado">
+                <form action="{% url 'acervo_pessoal:pesquisar_livros' %}" method="get" class="form-pesquisa">
+                    <input type="text" name="p" placeholder="Pesquisar livros..." class="pesquisa-input">
+                    <button type="submit" class="pesquisa-botao">Buscar</button>
+                </form>
+            </li>
+            <li  class="img-profile li-nav-logado" style="float:right">
+                <a  href="{% url 'acervo_pessoal:perfil' %}">
+                    <img src="{% static 'images/profile.svg' %}">
+                    <div class="login-texto">Meu perfil</div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="nav-2-opcoes-escolha ">
+        <div class="cadastrar-livro-op"><a href="{% url 'acervo_pessoal:cadastrar_livro'%}">Cadastrar livro</a></div>
+        <div class="registrar-livro-op"><a href="{% url 'acervo_pessoal:registrar_emprestimo'%}">Registrar empréstimo</a></div>
+        <div class="cadastrar-contato-op"><a href="{% url 'acervo_pessoal:cadastrar_contato'%}">Cadastrar contato</a></div>
+        <div class="registrar-devolucao-op"><a href="{% url 'acervo_pessoal:registrar_devolucao'%}">Registrar devolução</a></div>
+        <div class="listar-itens-op"><a href="{% url 'acervo_pessoal:listar_itens'%}">Listar itens</a></div>
+    </div>
+    {% endblock %}
+    {% block conteudo %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,44 @@
+.conteudo-itens{
+    display: flex;
+    /*width: 80%;
+    margin: auto;*/
+    gap: 3rem;
+}
+.conteudo-colun1{
+    padding-top: 3.9rem;
+    flex:1;
+    margin-left: 8rem;
+    
+}
+.conteudo-colun2{
+    padding-top: 4rem;
+    flex:1;
+    color: #400101;
+    margin-right: 2rem;
+    /*background-color: #FFFDF2;*/
+}
+
+.ul-itens-lista-geral{
+    text-decoration: none;
+    list-style-type: none; 
+    padding: 5px;
+    background-color: #E0E0E0;
+    border:#E0E0E0;
+    border-radius: 10px;
+    /*width: rem;*/
+}
+
+.titulo-conteudo-colun2{
+    margin-top: 0 !important;
+    font-weight: bold;
+}
+.item-cadastro-espaco{
+    margin-bottom: 1rem;
+}
+.display-block{
+    display: block;
+}
+
+.titulo-cadastro-devolucao{
+    font-weight: bold;
+}

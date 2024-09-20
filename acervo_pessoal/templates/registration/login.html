@@ -1,0 +1,28 @@
+{% extends 'base_nao_logado.html' %}
+{% load static %}
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    {% endblock %}
+    {% block conteudo %}
+    <div class="formulario">
+        {% if error %}
+            <p>{{ error }}</p>
+        {% endif %}
+        <form action="" method="post"  class="formulario-login">
+            {% csrf_token %}
+            <label class="display-block">Login</label>
+
+            <label for="lname">Nome de usuário</label>
+            <input class="input-login display-block" type="text" id="username" name="username">
+
+            <label for="lname">Senha</label><br>
+            <input class="input-login display-block" type="password" id="password" name="password">
+
+            <button type="submit" class="login-enviar">Enviar</button>
+
+            <p class="link-login display-block"><a href="{% url 'acervo_pessoal:cadastro' %}">Não tem conta? <span class="amarelo-marcador"> fazer cadastro</span></a></p>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

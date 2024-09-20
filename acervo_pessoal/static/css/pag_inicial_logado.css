@@ -1,0 +1,17 @@
+.conteudo-pag-inicial-logado{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-top: 5rem;
+}
+.conteudo-colun1{
+    max-width: 60%;
+
+}
+.conteudo-colun1 h1{
+    font-size: 2rem;
+    color: #4F1C1C;
+}
+.conteudo-colun2{
+
+}

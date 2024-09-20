@@ -1,0 +1,44 @@
+{% extends 'base_logado.html' %}
+{% load static %}
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'css/cadastrar_livro.css'%}">
+    {% endblock %}
+    {% block conteudo %}
+    <div class="conteudo-cadastrar-livro">
+        <div class="conteudo-colun1">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="" class="display-block item-cadastro-espaco label-cadastro-livro titulo-cadastro-livro">Cadastre um livro no seu acervo!</label>
+
+                <label for="" class="display-block label-cadastro-livro">Digite o nome do livro</label>
+                <input type="text" class="display-block item-cadastro-espaco input-cadastro-livro"  name="nome_livro" >
+                
+                <label for="" class="display-block label-cadastro-livro">Digite o autor</label>
+                <input type="text"  name="autor" class="display-block item-cadastro-espaco input-cadastro-livro">
+                
+                <label for="" class="display-block label-cadastro-livro">Digite o ano</label>
+                <input type="text"  name="ano"  class="display-block item-cadastro-espaco input-cadastro-livro">
+
+                <!--  foto do livro, solicitar -->
+                <label for="" class="display-block label-cadastro-livro">Envie uma foto do livro</label>
+                <input class="display-block item-cadastro-espaco" type="file" name="foto_livro" accept="image/*">
+
+                <button class="botao-cadastro-livro">Cadastrar</button>
+
+            </form>
+        </div>
+        <div class="conteudo-colun2">
+            <p class="titulo-conteudo-colun2">Lista de livros cadastrados no seu acervo:</p>
+            {% for livro in livros %}
+            <ul class="ul-livros-cadastrados-lista-geral">
+                <li>Livro: {{livro.nome}} -  Autor: {{livro.autor}} - Ano: {{livro.ano}}</li>
+                <img src="{{ livro.foto.url }}" alt="" width="100" height="150">
+            </ul>
+            {%empty%}
+                <p>Nenhum livro cadastrado no momento</p>
+            {% endfor %}
+
+        </div>
+    </div>
+    {% endblock %}
+

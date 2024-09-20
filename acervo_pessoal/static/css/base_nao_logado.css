@@ -1,0 +1,53 @@
+body{
+  margin: 0 !important;
+  background-color: #FFFFFF;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    overflow: hidden;
+    background-color: #400101;
+    text-align: center; 
+}
+li{
+    float: left;
+}
+ul li{
+    margin-top: 0.2rem;
+}
+
+.logo{
+    margin-left: 1rem;
+}
+
+.logo-texto{
+}
+
+.logo-texto a{
+    font-size: 1rem;
+}
+
+.img-profile{
+    margin-right: 1rem;
+}
+.img-profile a{
+    padding: 0 !important;
+}
+.login-texto{
+    font-size: 1rem;
+    line-height: 0.2;
+}
+  
+li a {
+    display: block;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+  

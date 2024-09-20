@@ -1,0 +1,36 @@
+{% extends 'base_logado.html' %}
+{% load static %}
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'css/cadastrar_contato.css'%}">
+    {% endblock %}
+    {% block conteudo %}
+    <div class="conteudo-cadastrar-contato">
+        <div class="conteudo-colun1">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="" class="display-block item-cadastro-espaco label-cadastro-contato titulo-cadastro-contato">Cadastre um contato no seu acervo!</label>
+
+                <label for="nome" class="display-block label-cadastro-contato">Digite o nome do contato</label>
+                <input required type="text" class="display-block item-cadastro-espaco input-cadastro-contato"  name="nome" >
+                
+                <label for="email" class="display-block label-cadastro-contato">Digite o email</label>
+                <input required type="email"  name="email" class="display-block item-cadastro-espaco input-cadastro-contato">
+                
+                <button class="botao-cadastro-contato">Cadastrar</button>
+
+            </form>
+        </div>
+        <div class="conteudo-colun2">
+            <p class="titulo-conteudo-colun2">Lista de contatos cadastrados no seu acervo:</p>
+            {% for contato in contatos %}
+            <ul class="ul-contatos-cadastrados-lista-geral">
+                <li>{{contato.nome}} - {{contato.email}}</li>
+            </ul>
+            {%empty%}
+                <p>Nenhum contato cadastrado no momento</p>
+            {% endfor %}
+
+        </div>
+    </div>
+    {% endblock %}
+
